@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 
 '''
+# target
 1. 总词数
 2. 不同词的个数
 3. 词频与排序
 4. 去除语料中的分词和词性标记，生成未加工语料
+
+# refer 
+字符编码方式查找 http://www.mytju.com/classcode/tools/encode_utf8.asp
+
 '''
 
 def inputDict(inString, dict):
@@ -25,7 +30,7 @@ while True:
     j = ""
     newLine = ""
     for i in lineCache:
-        if '\u4e00' <= i <= '\u9fa5': 
+        if '\u4e00' <= i <= '\u9fa5' or '\uff10' <= i <= '\uff19': 
             j += i
             newLine += i
         if i == '/' and j != "":
