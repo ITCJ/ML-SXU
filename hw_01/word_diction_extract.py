@@ -12,15 +12,17 @@
 
 '''
 
+import os
+
 def inputDict(inString, dict):
     if inString in dict:
         dict[inString] += 1
     else:
         dict[inString] = 1
 
-text = open('199801.txt', mode='r',encoding="gbk")
-resultDic = open('dicResult.txt', mode='w')
-resultStr = open('dicStr.txt', mode='w')
+text = open("/home/tcj_wsl/ML-SXU/hw_01/199801.txt", mode='r',encoding="gbk")
+resultDic = open('/home/tcj_wsl/ML-SXU/hw_01/dicResult.txt', mode='w')
+resultStr = open('/home/tcj_wsl/ML-SXU/hw_01/dicStr.txt', mode='w')
 dict = {}
 
 while True:

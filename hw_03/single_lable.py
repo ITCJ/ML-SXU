@@ -1,0 +1,1 @@
+text = open("/home/tcj_wsl/ML-SXU/hw_03/199801.txt", mode='r',encoding="gbk")
