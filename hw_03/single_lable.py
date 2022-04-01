@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+import re
+
 def neighborhood(iterable):
     iterator = iter(iterable)
     prev_item = None
@@ -29,6 +31,7 @@ while True:
         break
     
     newLine = ""
+    lineCache = re.sub("/[A-z]+", "", lineCache)
     for i, j, k in neighborhood(lineCache):
         if i == None:
             newLine += j
@@ -44,11 +47,11 @@ while True:
             newLine += j+"\M"
         elif ('\u4e00' <= i <= '\u9fa5' or '\uff10' <= i <= '\uff19') \
                     and ('\u4e00' <= j <= '\u9fa5' or '\uff10' <= j <= '\uff19') \
-                    and (k == '/'):
+                    and (k == ' '):
             newLine += j+"\E"
         elif (i == " ") \
                     and ('\u4e00' <= j <= '\u9fa5' or '\uff10' <= j <= '\uff19') \
-                    and (k == '/'):
+                    and (k == ' '):
             newLine += j + "\S"
         else:
             newLine += j

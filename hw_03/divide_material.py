@@ -23,3 +23,11 @@ while True:
         resultTrain.write( lineCache )
 
     lineNum += 1
+
+resultTrain.close()
+resultValidation.close()
+text.close()
+
+
+
+
