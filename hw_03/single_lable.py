@@ -29,9 +29,13 @@ while True:
     
     if not lineCache:
         break
-    
+
     newLine = ""
+    
     lineCache = re.sub("/[A-z]+", "", lineCache)
+    lineCache = re.sub("\[", "", lineCache)
+    lineCache = re.sub("\]", "", lineCache)
+
     for i, j, k in neighborhood(lineCache):
         if i == None:
             newLine += j
